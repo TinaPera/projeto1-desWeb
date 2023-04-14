@@ -27,8 +27,7 @@ function Confirmar() {
 <template>
   <div class="container">
     <div class="login">
-
-      <h2>login</h2>
+      <h2>Login</h2>
 
       <label>Nome:</label>
       <input
@@ -43,7 +42,13 @@ function Confirmar() {
       <input type="email" v-model="email" placeholder="Digite seu e-mail" />
 
       <label>Senha:</label>
-      <input type="password" v-model="senha" placeholder="digite sua senha" maxlength="20" minlength="4" />
+      <input
+        type="password"
+        v-model="senha"
+        placeholder="digite sua senha"
+        maxlength="20"
+        minlength="4"
+      />
       <label>Confirmar senha:</label>
       <input type="password" v-model="confirmarSenha" placeholder="confirme sua senha" />
 
@@ -54,7 +59,7 @@ function Confirmar() {
       <input type="text" v-model="endereco" placeholder="digite o seu endereço" maxlength="30" />
 
       <label>Cidade:</label>
-      <input type="text" v-model="cidade" maxlength="25"/>
+      <input type="text" v-model="cidade" maxlength="25" />
 
       <label>Estado:</label>
       <select v-model="estado">
@@ -88,7 +93,13 @@ function Confirmar() {
       </select>
 
       <label>hobbies:</label>
-      <input type="text" v-model="hobbies" placeholder="digite alguns hobbies seus" maxlength="30" minlength="5" />
+      <input
+        type="text"
+        v-model="hobbies"
+        placeholder="digite alguns hobbies seus"
+        maxlength="30"
+        minlength="5"
+      />
 
       <label>Linguagem de programação</label>
       <input
@@ -110,7 +121,7 @@ function Confirmar() {
       <button @click="Confirmar" class="btn btn-primary">Cadastrar</button>
     </div>
     <div class="info" v-if="Cadastrar">
-      <h2>suas informações</h2>
+      <h2>Suas Informações</h2>
       <p>Nome: {{ nome }}</p>
       <p>Email: {{ email }}</p>
       <p>Senha: {{ senha }}</p>
@@ -119,32 +130,48 @@ function Confirmar() {
       <p>Hobbie: {{ hobbies }}</p>
       <p>Linguagem de programação: {{ lingProg }}</p>
       <p class="text-bio">Biografia: {{ bio }}</p>
+      <div></div>
     </div>
   </div>
 </template>
 
 <style scoped>
 button {
-  background-color: rgb(151, 192, 247);
+  background-color: rgb(165, 165, 165);
   color: white;
   border-radius: 10px;
   width: 100px;
-  
+  border: 2px rgb(255, 255, 255);
 }
 
 .container {
   background-color: rgb(248, 247, 247);
-  border-radius: 5px;
+  border-radius: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   justify-content: center;
+  grid-template-columns: 1fr 1fr;
   color: white;
   background-color: rgb(0, 0, 0);
-}
+  height: 750px;
+  align-items: center; 
+  box-shadow: -1px 1px 15px rgba(0, 0, 0, 0.733)
 
+}
 
 input {
   border-radius: 10px;
+  height: 30px;
+  border: none;
+  padding-left: 15px;
+  box-shadow: -2px 2px 0px rgba(255, 255, 255, 0.295);
+
+}
+select{
+  border-radius: 10px;
+  height: 30px;
+  border: none;
+  padding-left: 15px;
+  box-shadow: -2px 2px 0px rgba(255, 255, 255, 0.295);
 }
 
 select {
@@ -154,15 +181,25 @@ select {
 .login {
   display: grid;
   grid-template-rows: 1fr;
-  width: 500px;
+  height: 560px;
+  align-content: center;
 }
 
 .info {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 36px;
   width: 500px;
+  height: 560px;
+  padding-left: 20px;
+  align-content: center;
 }
 
 h2 {
-text-align: center;
-
+  text-align: center;
+  text-shadow: -2px 1px 0px rgba(255, 255, 255, 0.295);
+}
+label{
+  padding-left: 15px;
 }
 </style>
